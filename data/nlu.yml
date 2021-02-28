@@ -1,0 +1,280 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - yup
+    - that did 
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: thankyou
+  examples: |
+    - thank you
+    - thanks
+    - yes, thanks
+    - cheers
+    - thanks a lot
+    - thank you very much
+    - appreciate
+    
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    
+- intent: play_video
+  examples: |
+    - play the mentioned video
+    - open the url
+    - open the link in browser
+    - show me the video that i asked for
+    
+- intent: out_of_scope
+  examples: |
+    - I want to order food
+    - What is 2 + 2?
+    - Who's the US President?
+    - What time is it?
+    - I am going to the moon.
+    
+- intent: start_dog_conversation
+  examples: |
+    - I want to buy a dog
+    - Please help me to find a pet
+    - I want to learn about dog breeds
+    - Can you teach me about dog?
+    - I need a dog
+    - We want some dogs
+    - Would you please help me to find a dog that suits my life?
+    - I want to find a dog to live with me
+    - I am looking for a dog 
+    - I want a pet
+
+- intent: dog_group
+  examples: |
+    - I like [sporting]{"entity":"group"}
+    - I prefer [hound]{"entity":"group"} dogs
+    - I love [working]{"entity":"group"} dogs
+    - Let's look for [toy]{"entity":"group"} dogs
+    - we are interested in [non-sporting]{"entity":"group"}
+    - They like [herding]{"entity":"group"} pets
+    - She loves [toy]{"entity":"group"} puppy
+    - She loves [foundation stock service]{"entity":"group"} dogs
+
+- intent: dog_activity_level
+  examples: |
+    - I like dogs with [needs lots of activity]{"entity":"activity_level"}
+    - I prefer [regular exercise]{"entity":"activity_level"} dogs
+    - I love [energetic]{"entity":"ctivity_level"} dogs
+    - Let's look for [energetic]{"entity":"activity_level"} dogs
+    - we are interested in [calm]{"entity":"activity_level"}
+    - They like [calm]{"entity":"activity_level"} pets
+    - She loves [energetic]{"entity":"activity_level"} puppy
+    - She loves [calm]{"entity":"activity_level"} dogs
+
+- intent: dog_barking_level
+  examples: |
+    - I like dogs bark [when necessary]{"entity":"barking_level"}
+    - I prefer [medium]{"entity":"barking_level","value":"medium"} quiet dogs
+    - I think [medium]{"entity":"barking_level","value":"medium"} is good
+    - I love dogs that [infrequent]{"entity":"barking_level","value":"infrequent"} bark
+    - Let's look for a dog that [likes to be vocal]{"entity":"barking_level"}
+    - Let's look for a dog that [frequent]{"entity":"barking_level","value":"frequent"}
+    - we like [frequent]{"entity":"barking_level","value":"frequent"} barking dogs.
+
+- intent: dog_characteristics
+  examples: |
+    - I like [smallest dog breeds]{"entity":"characteristics"}
+    - I prefer [medium dog breeds]{"entity":"characteristics"}
+    - I love [largest dog breeds]{"entity":"characteristics"}
+    - Let's look for [smartest breeds of dogs]{"entity":"characteristics"} 
+    - we are interested in [hypoallergenic dogs]{"entity":"characteristics"}
+    - They like [best family dogs]{"entity":"characteristics"}
+    - She loves [best guard dogs]{"entity":"characteristics"}
+    - She loves [best dog breeds for kids]{"entity":"characteristics"}
+    - I like [best dogs for apartments]{"entity":"characteristics"}
+    - I like [hairless dog breeds]{"entity":"characteristics"}
+
+- intent: dog_coat_type
+  examples: |
+    - I like [hairless]{"entity":"coat_type"}
+    - I prefer [short]{"entity":"coat_type"} hair dogs
+    - I love [medium]{"entity":"coat_type","value":"medium"} coat dogs 
+    - Let's look for [medium]{"entity":"coat_type"} hair dogs
+    - we are interested in [long]{"entity":"coat_type"} coat dogs
+    - They like [smooth]{"entity":"coat_type"} coat pets
+    - She loves [hairless]{"entity":"coat_type"} coat puppy
+    - She loves [wire]{"entity":"coat_type"} hair dogs
+
+- intent: dog_shedding
+  examples: |
+    - I like [infrequent]{"entity":"shedding","value":"infrequent"} shedding dogs
+    - I prefer [infrequent]{"entity":"shedding","value":"infrequent"} shedding dogs
+    - I love [seasonal]{"entity":"shedding"} shedding dogs
+    - Let's look for [seasonal]{"entity":"shedding"} shedding dogs
+    - we are interested in [frequent]{"entity":"shedding","value":"frequent"}
+    - They like [occasional]{"entity":"shedding"} shedding pets
+    - She loves [occasional]{"entity":"shedding"} shedding puppy
+    - She loves [regularly]{"entity":"shedding"} dogs
+
+- intent: dog_size
+  examples: |
+    - I like [xlarge]{"entity":"size"} dogs
+    - I prefer [large]{"entity":"size"} dogs
+    - I love [medium]{"entity":"size","value":"medium"} dogs 
+    - Let's look for [xsmall]{"entity":"size"} dogs
+    - we are interested in [large]{"entity":"size"}
+    - They like [small]{"entity":"size"} pets
+    - She loves [small]{"entity":"size"} puppy
+    - She loves [medium]{"entity":"size","value":"medium"} dogs
+
+- intent: dog_trainability
+  examples: |
+    - I like [stubborn]{"entity":"trainability"} dogs
+    - I prefer [agreeable]{"entity":"trainability"} dogs
+    - I love [easy to please]{"entity":"trainability"} dogs
+    - Let's look for [stubborn]{"entity":"trainability"} dogs
+    - we are interested in [easy training]{"entity":"trainability"}
+    - They like [easy training]{"entity":"trainability"} pets
+    - She loves [independent]{"entity":"trainability"} puppy
+    - She loves [independent]{"entity":"trainability"} dogs
+
+- intent: faq/ask_task
+  examples: |
+    - what do yo do?
+    - How can you help me?
+    - What is your job?
+    - What is your work?
+    - what service do you have?
+    - what is your task?
+    - Is there anything that you can do for me?
+    - What is your use?
+
+- intent: faq/ask_pet_toy
+  examples: |
+    - What pet toy should I buy?
+    - Any suggestion on toys?
+    - Where should I buy chewing toys?
+    - dog toy
+    - pet toy
+    - cat toy
+    - Where can I find dog toy?
+    - Do you have anything related to pet toy?
+    - I need some advices on toys
+    
+- intent: chitchat/ask_weather
+  examples: |
+    - what is the weather today?
+    - Is it raining outside?
+    - Today is very cold at the beach.
+    - What is the weather this week?
+    - Is it sunny outside?
+    - Is it cloudy or sunny?
+    - what is the weather tomorrow
+    
+- intent: chitchat/ask_cat
+  examples: |
+    - I like cat
+    - can you help me with cat?
+    - I want kitty.
+    - We love kitties.
+    - Let's try with cat and kitty.
+    - can you tell me about cat?
+    - what about cat?
+    - what about kitty?
+    
+- synonym: xsmall
+  examples: |
+    - extra small
+    - very small
+    - extra-small
+    - xs
+    
+- synonym: cat
+  examples: |
+    - cats
+    - cat
+    - kitty
+    - kitties
+    

@@ -1,0 +1,186 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thankyou
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - play_video
+  - out_of_scope
+  - chitchat
+  - faq
+  - start_dog_conversation
+  - dog_group:
+      use_entities:
+        - group
+  - dog_activity_level:
+      use_entities:
+        - activity_level
+  - dog_barking_level:
+      use_entities:
+        - barking_level
+  - dog_characteristics:
+      use_entities:
+        - characteristics
+  - dog_coat_type:
+      use_entities:
+        - coat_type
+  - dog_shedding:
+      use_entities:
+        - shedding
+  - dog_size:
+      use_entities:
+        - size
+  - dog_trainability:
+      use_entities:
+        - trainability
+
+entities:
+  - group
+  - activity_level
+  - barking_level
+  - characteristics
+  - coat_type
+  - shedding
+  - size
+  - trainability
+  
+slots:
+  group:
+    type: text
+  activity_level:
+    type: text
+  barking_level:
+    type: text
+  characteristics:
+    type: text
+  coat_type:
+    type: text
+  shedding:
+    type: text
+  size:
+    type: text
+  trainability:
+    type: text
+    
+responses:
+  utter_greet:
+  - text: |
+      "Hey there!"
+  - text: |
+      "Hello! How can I help you?"
+        
+  utter_goodbye:
+  - text: "Goodbye ^_^"
+    
+  utter_iamabot:
+  - text: "I am a bot, powered by CMPE252 Team 8"
+    
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.pinimg.com/736x/f4/19/6d/f4196d2e5b8ee7730ead8d38cffc58d2.jpg"
+    
+  utter_happy2:
+  - text: "Things will become better! Please don't give up, we have your back!"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_out_of_scope:
+  - text: Sorry, I didn't get that. Please rephrase it.
+
+  utter_start_conversition:
+  - text: |
+      "Okay, let me ask you few questions to help us find your best friend"
+  - text: |
+      "Sounds good, let me ask you few questions about your best furry friend"
+  - text: |
+      "Great, let's get to those simple questions first"
+        
+  utter_thankyou:
+  - text: "You're very welcome."
+    
+  utter_ask_group:
+  - text: "What group of dogs do you like? (please choose one below)\n\n    -sporting\n\n    -hound\n\n    -working\n\n    -terrier\n\n    -toy\n\n    -non-sporting\n\n    -herding\n\n    -miscellaneous\n\n    -foundation stock service"
+    
+  utter_ask_activity_level:
+  - text: "What is your preferred dog's activity level? (please choose one below)\n\n    -needs lots of activity\n\n    -regular exercise\n\n    -energetic\n\n    -calm"
+    
+  utter_ask_barking_level:
+  - text: "What is your ideal dog's barking level? (please choose one below)\n\n    -when necessary\n\n    -infrequent\n\n    -medium\n\n    -frequent\n\n    -likes to be vocal"
+    
+  utter_ask_characteristics:
+  - text: "What characteristics are you looking for in a dog? (please choose one below)\n\n    -smallest dog breeds\n\n    -medium dog breeds\n\n    -largest dog breeds\n\n    -smartest breeds of dogs\n\n    -hypoallergenic dogs\n\n    -best family dogs\n\n    -best guard dogs\n\n    -best dog breeds for kids\n\n    -best dogs for apartments\n\n    -hairless dog breeds"
+      
+  utter_ask_coat_type:
+  - text: "What about dog's coat? (please choose one below)\n\n    -hairless\n\n    -short\n\n    -medium\n\n    -wire\n\n    -smooth\n\n    -long"
+    
+  utter_ask_shedding:
+  - text: "How about dog's shedding level? (please choose one below)\n\n    -infrequent\n\n    -seasonal\n\n    -frequent\n\n    -occasional\n\n    -regularly"
+    
+  utter_ask_size:
+  - text: "What size of dog if preferred? (please choose one below)\n\n    -xsmall\n\n    -small\n\n    -medium\n\n    -large\n\n    -xlarge"
+    
+  utter_ask_trainability:
+  - text: "How about trainability? (please choose one below)\n\n    -stubborn\n\n    -agreeable\n\n    -easy to please\n\n    -independent\n\n    -easy training"
+    
+  utter_details_thanks:
+  - text: "Thanks for providing feedbacks below: \n    -Group: {Group},\n    -Activity_level: {Activity_level},\n    -Barking_level: {Barking_level},\n    -Characteristics: {Characteristics},\n    -Coat_type: {Coat_type},\n    -Shedding: {Shedding},\n    -Size: {Size},\n    -Trainability: {Trainability}"
+
+  utter_faq/ask_task:
+  - text: "Hello, my name is Puppy Bot"
+    image: "https://www.thehonestkitchen.com/blog/wp-content/uploads/2016/06/puppies.jpg"
+  - text: "Hi, we are experts for dog breeds!"
+    image: "https://i.redd.it/asd45ngnlgs31.jpg"
+   
+  utter_faq/ask_pet_toy:
+  - text: "Sorry, we don't recommend pet toys, please check with your local pet stores."
+  
+  utter_chitchat/ask_weather:
+  - text: "Oh, I am not sure, but hope today is a comfortable day to you =)"
+    
+  utter_chitchat/ask_cat:
+  - text: "Sorry that we are puppy experts, good luck on searching a cat/kitty =)"
+    image: "https://pbs.twimg.com/profile_images/913736465460449280/iBsWxXCv_400x400.jpg"
+  
+actions:
+  - action_submit
+  - action_video
+
+forms:
+  user_feedback_form:
+    group:
+      - type: from_entity
+        entity: group
+    activity_level:
+      - type: from_entity
+        entity: activity_level
+    barking_level:
+      - type: from_entity
+        entity: barking_level
+    characteristics:
+      - type: from_entity
+        entity: characteristics
+    coat_type:
+      - type: from_entity
+        entity: coat_type
+    shedding:
+      - type: from_entity
+        entity: shedding
+    size:
+      - type: from_entity
+        entity: size
+    trainability:
+      - type: from_entity
+        entity: trainability
+        
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
