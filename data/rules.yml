@@ -35,7 +35,7 @@ rules:
   - slot_was_set:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
-  - action: action_submit
+  - action: action_lookup_dogs
 
 - rule: respond to FAQs
   steps:

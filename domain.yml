@@ -153,6 +153,7 @@ responses:
 actions:
   - action_submit
   - action_video
+  - action_lookup_dogs
 
 forms:
   user_feedback_form:

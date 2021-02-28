@@ -11,6 +11,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType
 from rasa_sdk.executor import CollectingDispatcher
+import pandas as pd
 import webbrowser
 
 
@@ -75,3 +76,20 @@ class ActionSubmit(Action):
                                  Size=tracker.get_slot("size"),
                                  Trainability=tracker.get_slot("trainability"),
                                  )
+
+class ActionLookupDogs(Action):
+    def name(self) -> Text:
+        return "action_lookup_dogs"
+    
+    def run(
+            self,
+            dispatcher,
+            tracker: Tracker,
+            domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+        df = pd.read_csv("web_scraping/dog_breed_characteristics.csv")
+        filtered_size = df[df['Size']==tracker.get_slot("size")]
+        dispatcher.utter_message("Suggested Dog: " + filtered_size.iloc[0]['Breed'])
+
+     
+
