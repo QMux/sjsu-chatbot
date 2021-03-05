@@ -88,8 +88,13 @@ class ActionLookupDogs(Action):
             domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         df = pd.read_csv("web_scraping/dog_breed_characteristics.csv")
-        filtered_size = df[df['Size']==tracker.get_slot("size")]
-        dispatcher.utter_message("Suggested Dog: " + filtered_size.iloc[0]['Breed'])
+        characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding"]
+        for char in characteristics:
+            df = df[df[char]==tracker.get_slot(char)]
+        if df.shape[0] == 0:
+            dispacter.utter_message("No suggested dogs with those features!")
+        else:
+            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['Breed'])
 
      
 
