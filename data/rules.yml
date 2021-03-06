@@ -16,6 +16,11 @@ rules:
   steps:
   - intent: nlu_fallback
   - action: utter_out_of_scope
+
+- rule: restart chat
+  steps:
+  - intent: restart_chat
+  - action: action_restart
   
 - rule: Activate form
   steps:
@@ -35,7 +40,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   # The actions we want to run when the form is submitted.
-  - action: action_lookup_dogs
+  # - action: action_lookup_dogs
+  - action: action_submit
 
 - rule: respond to FAQs
   steps:
@@ -46,3 +52,18 @@ rules:
   steps:
   - intent: chitchat
   - action: utter_chitchat
+  
+- rule: respond to addinfo
+  steps:
+  - intent: addinfo
+  - action: utter_addinfo
+  
+- rule: play video
+  steps:
+  - intent: play_video
+  - action: action_video
+ 
+- rule: display image
+  steps:
+  - intent: display_image
+  - action: action_image

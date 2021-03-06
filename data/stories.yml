@@ -28,12 +28,7 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_happy2
-
-- story: happy play video path
-  steps:
-  - intent: play_video
-  - action: action_video
-    
+  
 - story: path chitchat
   steps:
   - intent: greet
@@ -47,3 +42,51 @@ stories:
   - action: utter_greet
   - intent: faq
   - action: utter_faq
+
+- story: path addinfo
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: addinfo
+  - action: utter_addinfo
+  
+  
+# - story: Stop Chat 1
+  # steps:
+  # - intent: greet
+  # - action: utter_greet
+  # - intent: start_dog_conversation
+  # - action: utter_start_conversition
+  # - action: user_feedback_form
+  # - active_loop: user_feedback_form
+  # - intent: stop
+  # - action: utter_ask_continue
+  # - intent: deny 
+  # - action: action_deactivate_loop
+  # - active_loop: null
+  
+# - story: Stop Chat 2
+  # steps:
+  # - intent: greet
+  # - action: utter_greet
+  # - intent: start_dog_conversation
+  # - action: utter_start_conversition
+  # - action: user_feedback_form
+  # - active_loop: user_feedback_form
+  # - intent: stop
+  # - action: utter_ask_continue
+  # - intent: stop
+  # - action: action_deactivate_loop
+  # - active_loop: null
+  
+ # story: Restart Chat
+  # steps:
+  # - intent: greet
+  # - action: utter_greet
+  # - intent: start_dog_conversation
+  # - action: utter_start_conversition
+  # - action: user_feedback_form
+  # - active_loop: user_feedback_form
+  # - action: utter_ask_restart
+  # - intent: affirm
+  # - action: action_restart

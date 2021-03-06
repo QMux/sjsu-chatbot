@@ -4,17 +4,37 @@
 # See this guide on how to implement these action:
 # https://rasa.com/docs/rasa/custom-actions
 
-
-# This is a simple example for a custom action which utters "Hello World!"
-
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
-from rasa_sdk.events import SlotSet, EventType
+from rasa_sdk.events import SlotSet, EventType, Restarted
 from rasa_sdk.executor import CollectingDispatcher
-import pandas as pd
 import webbrowser
 
 
+class ActionRestart(Action):
+    def name(self) -> Text:
+        return "action_restart"
+
+    def run(self, dispatcher, tracker, domain):
+        return [Restarted()]
+        
+
+class ActionImage(Action):
+    def name(self) -> Text:
+        return "action_image"
+
+    async def run(
+            self,
+            dispatcher,
+            tracker: Tracker,
+            domain: "DomainDict",
+    ) -> List[Dict[Text, Any]]:
+        image_url = "https://i.pinimg.com/736x/f4/19/6d/f4196d2e5b8ee7730ead8d38cffc58d2.jpg"
+        dispatcher.utter_message("Wait... I am sure he will brighten your day!")
+        webbrowser.open(image_url)
+        return []
+        
+        
 class ActionVideo(Action):
     def name(self) -> Text:
         return "action_video"
@@ -26,7 +46,7 @@ class ActionVideo(Action):
             domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
         video_url = "https://www.youtube.com/watch?v=U6Qp-xvXsME"
-        dispatcher.utter_message("Wait... Please smile to this cute friend!")
+        dispatcher.utter_message("Wait... Please smile to this cute friend Ollie!")
         webbrowser.open(video_url)
         return []
 
@@ -41,7 +61,7 @@ class ActionUserFeedbackForm(Action):
         required_slots = ["group",
                           "activity_level",
                           "barking_level",
-                          "characteristics",
+                          # "characteristics",
                           "coat_type",
                           "shedding",
                           "size",
@@ -70,12 +90,25 @@ class ActionSubmit(Action):
                                  Group=tracker.get_slot("group"),
                                  Activity_level=tracker.get_slot("activity_level"),
                                  Barking_level=tracker.get_slot("barking_level"),
-                                 Characteristics=tracker.get_slot("characteristics"),
+                                 # Characteristics=tracker.get_slot("characteristics"),
                                  Coat_type=tracker.get_slot("coat_type"),
                                  Shedding=tracker.get_slot("shedding"),
                                  Size=tracker.get_slot("size"),
                                  Trainability=tracker.get_slot("trainability"),
                                  )
+    
+        df = pd.read_csv("web_scraping/dog_breed_characteristics.csv")
+        characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding"]
+        for char in characteristics:
+            df = df[df[char]==tracker.get_slot(char)]
+        
+        dispatcher.utter_message("...checking our 279 dog breeds database...")
+        
+        if df.shape[0] == 0:
+            dispacter.utter_message("No suggested dogs with those features! A cat may be better for you =)")
+        else:
+            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['Breed'])
+
 
 class ActionLookupDogs(Action):
     def name(self) -> Text:
@@ -92,9 +125,6 @@ class ActionLookupDogs(Action):
         for char in characteristics:
             df = df[df[char]==tracker.get_slot(char)]
         if df.shape[0] == 0:
-            dispacter.utter_message("No suggested dogs with those features!")
+            dispacter.utter_message("No suggested dogs with those features! A cat may be better for you =)")
         else:
             dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['Breed'])
-
-     
-

@@ -109,6 +109,15 @@ nlu:
     - open the url
     - open the link in browser
     - show me the video that i asked for
+
+- intent: display_image
+  examples: |
+    - show an image of dog
+    - any picture?
+    - dog's photo
+    - do you have any dog photos?
+    - and image of a dog to see here?
+    - please display a dog photo
     
 - intent: out_of_scope
   examples: |
@@ -120,106 +129,220 @@ nlu:
     
 - intent: start_dog_conversation
   examples: |
-    - I want to buy a dog
     - Please help me to find a pet
     - I want to learn about dog breeds
     - Can you teach me about dog?
-    - I need a dog
-    - We want some dogs
+    - please help me to understand dog breeds
     - Would you please help me to find a dog that suits my life?
     - I want to find a dog to live with me
-    - I am looking for a dog 
-    - I want a pet
+    - please help me to understand dogs
 
 - intent: dog_group
   examples: |
-    - I like [sporting]{"entity":"group"}
-    - I prefer [hound]{"entity":"group"} dogs
-    - I love [working]{"entity":"group"} dogs
-    - Let's look for [toy]{"entity":"group"} dogs
-    - we are interested in [non-sporting]{"entity":"group"}
-    - They like [herding]{"entity":"group"} pets
-    - She loves [toy]{"entity":"group"} puppy
-    - She loves [foundation stock service]{"entity":"group"} dogs
+    - I like [sporting](group)
+    - I prefer [hound](group) dogs
+    - I love [working](group) dogs
+    - Let's look for [toy](group) dogs
+    - we are interested in [non-sporting](group)
+    - we are interested in [non sporting](group)
+    - They like [non sport](group) pets
+    - She loves [foundation stock service](group) puppy
+    - They like [herding](group) pets
+    - She loves [toy](group) puppy
+    - She loves [foundation-stock service](group) puppy
+    - I'd choose [toy](group)
+    - I'd choose [terrier](group)
+    - She loves [foundation-stock-service](group) dogs
+    - I like [miscellaneous class](group)
+    - I like [miscellaneous-class](group) dogs
+    - I prefer [miscellaneous](group) dogs
+    - Let's go with [miscellaneous class](group) dog group
+    - Let's go with [nonsport](group) dog group
+    - Let's go with [terrier](group) dog group
+    - Let's go with [foundation stock service](group) dog group
 
 - intent: dog_activity_level
   examples: |
-    - I like dogs with [needs lots of activity]{"entity":"activity_level"}
-    - I prefer [regular exercise]{"entity":"activity_level"} dogs
-    - I love [energetic]{"entity":"ctivity_level"} dogs
-    - Let's look for [energetic]{"entity":"activity_level"} dogs
-    - we are interested in [calm]{"entity":"activity_level"}
-    - They like [calm]{"entity":"activity_level"} pets
-    - She loves [energetic]{"entity":"activity_level"} puppy
-    - She loves [calm]{"entity":"activity_level"} dogs
+    - I like dogs with [needs-lots-of-activity](activity_level)
+    - I prefer [consistent](activity_level) dogs
+    - I want [consistent](ctivity_level) dogs
+    - I love [energetic](ctivity_level) dogs
+    - Let's look for [needs-lots-of-activity](activity_level) dogs
+    - we are interested in [calm](activity_level)
+    - They like [calm](activity_level) pets
+    - She loves [energetic](activity_level) puppy
+    - She loves [calm](activity_level) dogs
+    - we are interested in [needs lots of activity ](activity_level)
+    - They like [needs much activity](activity_level) pets
+    - She loves [need a lot activity](activity_level) puppy
+    - Let's go with [consistent](ctivity_level) activity level
+    - Let's go with [need a lot activity](activity_level) activity level
+    - Let's go with [energetic](activity_level) activity level
+    - Let's go with [calm](activity_level) activity level
+    - Let's go with [need a lot activity](activity_level) activity level
+    
 
 - intent: dog_barking_level
   examples: |
-    - I like dogs bark [when necessary]{"entity":"barking_level"}
-    - I prefer [medium]{"entity":"barking_level","value":"medium"} quiet dogs
-    - I think [medium]{"entity":"barking_level","value":"medium"} is good
-    - I love dogs that [infrequent]{"entity":"barking_level","value":"infrequent"} bark
-    - Let's look for a dog that [likes to be vocal]{"entity":"barking_level"}
-    - Let's look for a dog that [frequent]{"entity":"barking_level","value":"frequent"}
-    - we like [frequent]{"entity":"barking_level","value":"frequent"} barking dogs.
+    - I like dogs bark [when-necessary](barking_level)
+    - I prefer [medium](barking_level) quiet dogs
+    - I like dogs bark [when necessary](barking_level)
+    - I prefer [as necessary](barking_level) quiet dogs
+    - I think [medium](barking_level) is good
+    - I love dogs that [infrequent](barking_level) bark
+    - Let's look for a dog that [likes-to-be-vocal](barking_level)
+    - Let's look for a dog that [frequent](barking_level)
+    - we like [frequent](barking_level) barking dogs.
+    - I love dogs that [vocal](barking_level) bark
+    - Let's look for a dog that [likes to be vocal](barking_level)
+    - Let's look for a dog that [maybe vocal](barking_level)
+    - Let's go with [likes to be vocal](barking_level) barking level
+    - Let's go with [when necessary](barking_level) barking level
+    - Let's go with [medium](barking_level) barking level
+    - Let's go with [infrequent](barking_level) barking level
 
-- intent: dog_characteristics
-  examples: |
-    - I like [smallest dog breeds]{"entity":"characteristics"}
-    - I prefer [medium dog breeds]{"entity":"characteristics"}
-    - I love [largest dog breeds]{"entity":"characteristics"}
-    - Let's look for [smartest breeds of dogs]{"entity":"characteristics"} 
-    - we are interested in [hypoallergenic dogs]{"entity":"characteristics"}
-    - They like [best family dogs]{"entity":"characteristics"}
-    - She loves [best guard dogs]{"entity":"characteristics"}
-    - She loves [best dog breeds for kids]{"entity":"characteristics"}
-    - I like [best dogs for apartments]{"entity":"characteristics"}
-    - I like [hairless dog breeds]{"entity":"characteristics"}
+# - intent: dog_characteristics
+  # examples: |
+    # - I like [smallest dog breeds](characteristics)
+    # - I prefer [medium dog breeds](characteristics)
+    # - I love [largest dog breeds](characteristics)
+    # - Let's look for [smartest breeds of dogs](characteristics) 
+    # - we are interested in [hypoallergenic dogs](characteristics)
+    # - They like [best family dogs](characteristics)
+    # - She loves [best guard dogs](characteristics)
+    # - She loves [best dog breeds for kids](characteristics)
+    # - I like [best dogs for apartments](characteristics)
+    # - I like [hairless dog breeds](characteristics)
 
 - intent: dog_coat_type
   examples: |
-    - I like [hairless]{"entity":"coat_type"}
-    - I prefer [short]{"entity":"coat_type"} hair dogs
-    - I love [medium]{"entity":"coat_type","value":"medium"} coat dogs 
-    - Let's look for [medium]{"entity":"coat_type"} hair dogs
-    - we are interested in [long]{"entity":"coat_type"} coat dogs
-    - They like [smooth]{"entity":"coat_type"} coat pets
-    - She loves [hairless]{"entity":"coat_type"} coat puppy
-    - She loves [wire]{"entity":"coat_type"} hair dogs
+    - I like [hairless](coat_type)
+    - I prefer [short](coat_type) hair dogs
+    - I love [fair](coat_type) coat dogs 
+    - Let's look for [fair](coat_type) hair dogs
+    - we are interested in [long](coat_type) coat dogs
+    - They like [smooth](coat_type) coat pets
+    - She loves [hairless](coat_type) coat puppy
+    - She loves [wire](coat_type) hair dogs
+    - Let's go with [fair](coat_type) coat type
+    - Let's go with [short](coat_type) coat type
+    - Let's go with [long](coat_type)coat type
+    - Let's go with [smooth](coat_type)coat type
 
 - intent: dog_shedding
   examples: |
-    - I like [infrequent]{"entity":"shedding","value":"infrequent"} shedding dogs
-    - I prefer [infrequent]{"entity":"shedding","value":"infrequent"} shedding dogs
-    - I love [seasonal]{"entity":"shedding"} shedding dogs
-    - Let's look for [seasonal]{"entity":"shedding"} shedding dogs
-    - we are interested in [frequent]{"entity":"shedding","value":"frequent"}
-    - They like [occasional]{"entity":"shedding"} shedding pets
-    - She loves [occasional]{"entity":"shedding"} shedding puppy
-    - She loves [regularly]{"entity":"shedding"} dogs
+    - I like [less](shedding) shedding dogs
+    - I prefer [less](shedding) shedding dogs
+    - I love [seasonal](shedding) shedding dogs
+    - Let's look for [seasonal](shedding) shedding dogs
+    - we are interested in [often](shedding)
+    - They like [occasional](shedding) shedding pets
+    - She loves [occasional](shedding) shedding puppy
+    - She loves [average](shedding) dogs
+    - Let's go with [less](shedding) shedding
+    - Let's go with [average](shedding) shedding
+    - Let's go with [often](shedding) shedding
+    - Let's go with [occasional](shedding) shedding
 
 - intent: dog_size
   examples: |
-    - I like [xlarge]{"entity":"size"} dogs
-    - I prefer [large]{"entity":"size"} dogs
-    - I love [medium]{"entity":"size","value":"medium"} dogs 
-    - Let's look for [xsmall]{"entity":"size"} dogs
-    - we are interested in [large]{"entity":"size"}
-    - They like [small]{"entity":"size"} pets
-    - She loves [small]{"entity":"size"} puppy
-    - She loves [medium]{"entity":"size","value":"medium"} dogs
-
+    - I like [xlarge](size) dogs
+    - I prefer [large](size) dogs
+    - I love [medium](size) dogs 
+    - Let's look for [xsmall](size) dogs
+    - we are interested in [large](size)
+    - They like [small](size) pets
+    - She loves [small](size) puppy
+    - She loves [medium](size) dogs
+    - I love [extra large](size) dogs 
+    - Let's look for [extra small](size) dogs
+    - we are interested in [extra-large](size)
+    - They like [extra-small](size) pets
+    - She loves [xs](size) puppy
+    - I like [xl](size) dogs
+    - I prefer [very large](size) dogs
+    - I love [very small](size) dogs 
+    - Let's go with [medium](size) dog size
+    - Let's go with [large](size) dog size
+    - Let's go with [extra large](size) dog size
+    - Let's go with [extra small](size) dog size
+    
 - intent: dog_trainability
   examples: |
-    - I like [stubborn]{"entity":"trainability"} dogs
-    - I prefer [agreeable]{"entity":"trainability"} dogs
-    - I love [easy to please]{"entity":"trainability"} dogs
-    - Let's look for [stubborn]{"entity":"trainability"} dogs
-    - we are interested in [easy training]{"entity":"trainability"}
-    - They like [easy training]{"entity":"trainability"} pets
-    - She loves [independent]{"entity":"trainability"} puppy
-    - She loves [independent]{"entity":"trainability"} dogs
+    - I like [may-be-stubborn](trainability) dogs
+    - I like [stubborn](trainability) dogs
+    - I prefer [agreeable](trainability) dogs
+    - I love [eager-to-please](trainability) dogs
+    - I love [eager to please](trainability) dogs
+    - Let's look for [stubborn](trainability) dogs
+    - we are interested in [easy training](trainability)
+    - we are interested in [easy to training](trainability)
+    - They like [easy-training](trainability) pets
+    - She loves [independent](trainability) puppy
+    - She loves [independent](trainability) dogs
+    - They like [eager to please](trainability) pets
+    - Let's go with [eager to please](trainability) trainability
+    - Let's go with [may be stubborn](trainability) trainability
+    - Let's go with [easy training](trainability) trainability
+    - Let's go with [stubborn](trainability) trainability
+    
+- intent: addinfo/dog_group
+  examples: |
+    - What are difference in dog group?
+    - Wouls you please give me some examples on dog groups?
+    - Please provide more information on each of dog group
+    - any suggestion on dog group?
+    - Please give me some suggestion on dog group
+    
+- intent: addinfo/dog_activity_level
+  examples: |
+    - What are difference in dog activity level?
+    - Wouls you please give me some examples on activity levels?
+    - Please provide more information on activity level
+    - any suggestion on activity level?
+    - Please give me some suggestion on activity level
+    
+- intent: addinfo/dog_barking_level
+  examples: |
+    - What are difference in barking level?
+    - Wouls you please give me some examples on barking levels?
+    - Please provide more information on each barking level.
+    - any suggestion on barking level?
+    - Please give me some suggestion on barking level
 
+- intent: addinfo/dog_coat_type
+  examples: |
+    - What are difference in dog coat types?
+    - Wouls you please give me some examples on dog coat types?
+    - Please provide more information on dog coat type
+    - Would you provide more information on coat type?
+    - any suggestion on coat type?
+    - Please give me some suggestion on coat type
+        
+- intent: addinfo/dog_shedding
+  examples: |
+    - What are difference in dog shedding?
+    - Wouls you please give me some examples on dog shedding?
+    - Please provide more information on dog shedding  
+    - any suggestion on dog shedding?
+    - Please give me some suggestion on dog shedding
+    
+- intent: addinfo/dog_size
+  examples: |
+    - What are difference in dog sizes?
+    - Wouls you please give me some examples on dog sizes?
+    - Please provide more information on dog size
+    - any suggestion on dog size?
+    - Please give me some suggestion on dog size
+
+- intent: addinfo/dog_trainability
+  examples: |
+    - What are difference in dog's trainability?
+    - Wouls you please give me some examples on dog trainability?
+    - Please provide more information on dog trainability
+    - any suggestion on dog trainability?
+    - Please give me some suggestion on dog trainability
+  
 - intent: faq/ask_task
   examples: |
     - what do yo do?
@@ -230,6 +353,7 @@ nlu:
     - what is your task?
     - Is there anything that you can do for me?
     - What is your use?
+    - who are you?
 
 - intent: faq/ask_pet_toy
   examples: |
@@ -257,12 +381,31 @@ nlu:
   examples: |
     - I like cat
     - can you help me with cat?
-    - I want kitty.
-    - We love kitties.
-    - Let's try with cat and kitty.
+    - I want a cat.
+    - We love cat.
+    - Let's try with cat.
     - can you tell me about cat?
     - what about cat?
-    - what about kitty?
+    
+# - intent: stop
+    # - stop
+    # - I have to go
+    # - I don't want to continue
+    # - I need to stop this now
+    # - please stop 
+    # - I need to do somethimg else
+    # - this is it for today
+    # - i am taking off
+    
+- intent: restart_chat
+  examples: |
+    - restart
+    - let's start from beginning
+    - let's try it again
+    - let's do it again
+    - I want to restart 
+    - Let me start from beginning
+    - start again from beginning
     
 - synonym: xsmall
   examples: |
@@ -270,11 +413,71 @@ nlu:
     - very small
     - extra-small
     - xs
+ 
+- synonym: xlarge
+  examples: |
+    - extra large
+    - very large
+    - extra-large
+    - xl
+
+- synonym: foundation-stock-service
+  examples: |
+    - foundation stock service
+    - foundation stock
+    - foundation-stock service
+  
+- synonym: non-sporting
+  examples: |
+    - non sporting
+    - non-sport
+    - non sport
+    - nonsporting
+    - nonsport
+
+- synonym: miscellaneous-class
+  examples: |
+    - miscellaneous class
+    - miscellaneous
+ 
+- synonym: likes-to-be-vocal
+  examples: |
+    - likes to be vocal
+    - maybe vocal
+    - to be vocal
+    - vocal
+    - be vocal
     
+- synonym: when-necessary
+  examples: |
+    - when necessary 
+    - as necessary
+    
+- synonym: easy-training
+  examples: |
+    - easy training
+    - easy to train
+
+- synonym: may-be-stubborn
+  examples: |
+    - may be stubborn
+    - stubborn
+
+- synonym: eager-to-please
+  examples: |
+    - eager to please
+    
+- synonym: needs-lots-of-activity
+  examples: |
+    - needs lots of activity 
+    - needs much activity
+    - need a lot activity
+     
 - synonym: cat
   examples: |
     - cats
     - cat
     - kitty
     - kitties
+
     

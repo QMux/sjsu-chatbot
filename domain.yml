@@ -10,40 +10,54 @@ intents:
   - mood_unhappy
   - bot_challenge
   - play_video
+  - display_image
   - out_of_scope
   - chitchat
   - faq
+  - addinfo
   - start_dog_conversation
   - dog_group:
       use_entities:
-        - group
+      - group
   - dog_activity_level:
       use_entities:
-        - activity_level
+      - activity_level
   - dog_barking_level:
       use_entities:
-        - barking_level
-  - dog_characteristics:
-      use_entities:
-        - characteristics
+      - barking_level
+      ignore_entities:
+      - dog_coat_type
+      - dog_size
+      - dog_shedding
+  # - dog_characteristics:
+      # use_entities:
+      # - characteristics
   - dog_coat_type:
       use_entities:
-        - coat_type
+      - coat_type
+      ignore_entities:
+      - dog_barking_level
+      - dog_size
   - dog_shedding:
       use_entities:
-        - shedding
+      - shedding
+      ignore_entities:
+      - dog_barking_level
   - dog_size:
       use_entities:
-        - size
+      - size
+      ignore_entities:
+      - dog_coat_type
+      - dog_barking_level
   - dog_trainability:
       use_entities:
-        - trainability
-
+      - trainability        
+        
 entities:
   - group
   - activity_level
   - barking_level
-  - characteristics
+  # - characteristics
   - coat_type
   - shedding
   - size
@@ -56,8 +70,8 @@ slots:
     type: text
   barking_level:
     type: text
-  characteristics:
-    type: text
+  # characteristics:
+    # type: text
   coat_type:
     type: text
   shedding:
@@ -70,9 +84,11 @@ slots:
 responses:
   utter_greet:
   - text: |
-      "Hey there!"
+      "Hey there! This is dog breed related chatroom"
   - text: |
-      "Hello! How can I help you?"
+      "Hello! How can I help you? (we know dogs ^_^)"
+  - text: |
+      "Hi! How are you doing today?"
         
   utter_goodbye:
   - text: "Goodbye ^_^"
@@ -81,8 +97,7 @@ responses:
   - text: "I am a bot, powered by CMPE252 Team 8"
     
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.pinimg.com/736x/f4/19/6d/f4196d2e5b8ee7730ead8d38cffc58d2.jpg"
+  - text: "What about getting yourself a best furry friend? They will make you smile everyday ^_^"
     
   utter_happy2:
   - text: "Things will become better! Please don't give up, we have your back!"
@@ -111,16 +126,16 @@ responses:
   - text: "What group of dogs do you like? (please choose one below)\n\n    -sporting\n\n    -hound\n\n    -working\n\n    -terrier\n\n    -toy\n\n    -non-sporting\n\n    -herding\n\n    -miscellaneous\n\n    -foundation stock service"
     
   utter_ask_activity_level:
-  - text: "What is your preferred dog's activity level? (please choose one below)\n\n    -needs lots of activity\n\n    -regular exercise\n\n    -energetic\n\n    -calm"
+  - text: "What is your preferred dog's activity level? (please choose one below)\n\n    -needs lots of activity\n\n    -consistent\n\n    -energetic\n\n    -calm"
     
   utter_ask_barking_level:
-  - text: "What is your ideal dog's barking level? (please choose one below)\n\n    -when necessary\n\n    -infrequent\n\n    -medium\n\n    -frequent\n\n    -likes to be vocal"
+  - text: "What is your ideal dog's barking level? (please choose one below)\n\n    -when necessary\n\n    -less\n\n    -average\n\n    -often\n\n    -likes to be vocal"
     
-  utter_ask_characteristics:
-  - text: "What characteristics are you looking for in a dog? (please choose one below)\n\n    -smallest dog breeds\n\n    -medium dog breeds\n\n    -largest dog breeds\n\n    -smartest breeds of dogs\n\n    -hypoallergenic dogs\n\n    -best family dogs\n\n    -best guard dogs\n\n    -best dog breeds for kids\n\n    -best dogs for apartments\n\n    -hairless dog breeds"
+  # utter_ask_characteristics:
+  # - text: "What characteristics are you looking for in a dog? (please choose one below)\n\n    -smallest dog breeds\n\n    -medium dog breeds\n\n    -largest dog breeds\n\n    -smartest breeds of dogs\n\n    -hypoallergenic dogs\n\n    -best family dogs\n\n    -best guard dogs\n\n    -best dog breeds for kids\n\n    -best dogs for apartments\n\n    -hairless dog breeds"
       
   utter_ask_coat_type:
-  - text: "What about dog's coat? (please choose one below)\n\n    -hairless\n\n    -short\n\n    -medium\n\n    -wire\n\n    -smooth\n\n    -long"
+  - text: "What about dog's coat? (please choose one below)\n\n    -hairless\n\n    -short\n\n    -fair\n\n    -wire\n\n    -smooth\n\n    -long"
     
   utter_ask_shedding:
   - text: "How about dog's shedding level? (please choose one below)\n\n    -infrequent\n\n    -seasonal\n\n    -frequent\n\n    -occasional\n\n    -regularly"
@@ -129,15 +144,18 @@ responses:
   - text: "What size of dog if preferred? (please choose one below)\n\n    -xsmall\n\n    -small\n\n    -medium\n\n    -large\n\n    -xlarge"
     
   utter_ask_trainability:
-  - text: "How about trainability? (please choose one below)\n\n    -stubborn\n\n    -agreeable\n\n    -easy to please\n\n    -independent\n\n    -easy training"
+  - text: "How about trainability? (please choose one below)\n\n    -may be stubborn\n\n    -agreeable\n\n    -easy to please\n\n    -independent\n\n    -easy training"
     
   utter_details_thanks:
-  - text: "Thanks for providing feedbacks below: \n    -Group: {Group},\n    -Activity_level: {Activity_level},\n    -Barking_level: {Barking_level},\n    -Characteristics: {Characteristics},\n    -Coat_type: {Coat_type},\n    -Shedding: {Shedding},\n    -Size: {Size},\n    -Trainability: {Trainability}"
+  - text: "Thanks for providing feedbacks below: \n    -Group: {Group},\n    -Activity_level: {Activity_level},\n    -Barking_level: {Barking_level},\n     -Coat_type: {Coat_type},\n    -Shedding: {Shedding},\n    -Size: {Size},\n    -Trainability: {Trainability}"
 
+  utter_restart:
+  - text: "**** Restart Chat ****"
+  
   utter_faq/ask_task:
-  - text: "Hello, my name is Puppy Bot"
+  - text: "Hello, my name is Puppy Bot, I can help you with information on dog breeds"
     image: "https://www.thehonestkitchen.com/blog/wp-content/uploads/2016/06/puppies.jpg"
-  - text: "Hi, we are experts for dog breeds!"
+  - text: "Hi, we are experts for dog breeds! We can help you find a best friend!"
     image: "https://i.redd.it/asd45ngnlgs31.jpg"
    
   utter_faq/ask_pet_toy:
@@ -149,35 +167,78 @@ responses:
   utter_chitchat/ask_cat:
   - text: "Sorry that we are puppy experts, good luck on searching a cat/kitty =)"
     image: "https://pbs.twimg.com/profile_images/913736465460449280/iBsWxXCv_400x400.jpg"
+    
+  utter_addinfo/dog_group:
+  - text: "Okay, I would suggest you to choose a dog group based on your own life style\n\n...\n\n"
+    
+  utter_addinfo/dog_activity_level:
+  - text: "A dog's activity level should be similar to owner, if you are an active person, an active dog would be a good choice\n\n...\n\n"
+    
+  utter_addinfo/dog_barking_level:
+  - text: "Good question Here is an idea, please choose a vocal dog if you like to sing =)\n\n...\n\n"
+       
+  utter_addinfo/dog_coat_type:
+  - text: "Sure, here are additional infomation on coat type:\n\n    -hairless dogs require special skincare routines due to more exposure.\n\n    -short coat dogs have more rigid hairs\n\n    -medium coat dogs have softer hairs than short coat ones\n\n    -wire coat is not soft and silky, but rather rough and bristly\n\n    -smooth coat is like short coat, but shinier\n\n    -long coat is very soft and furry, but requires lots of grooming\n\n...\n\n"
+  
+  utter_addinfo/dog_shedding:
+  - text: "Dog grooming can be very time consuming and messy, if you don't have lots of free time, please consider dogs with low to medium shedding\n\n...\n\n"
+    
+  utter_addinfo/dog_size:
+  - text: "Of course. Here are some details below:\n\n    -xsmall is under 10 lbs\n\n    -small is between 10-25 lbs\n\n    -medium is between 20-50 lbs\n\n    -large is between 50-75 lbs\n\n    -xlarge is over 75 lbs\n\n...\n\n"
+
+  utter_addinfo/dog_trainability:
+  - text: "Okay. If you haven't had a dog before, an eager to please or easy training dog will be good to start with\n\n...\n\n"
+       
+  # utter_ask_continue:
+  # - text: "Should we continue it?"
   
 actions:
   - action_submit
   - action_video
+  - action_image
   - action_lookup_dogs
+  - action_restart
 
 forms:
   user_feedback_form:
     group:
       - type: from_entity
         entity: group
+        intent: dog_group
+        not_intent: faq
     activity_level:
       - type: from_entity
         entity: activity_level
     barking_level:
       - type: from_entity
         entity: barking_level
-    characteristics:
-      - type: from_entity
-        entity: characteristics
+        intent: dog_barking_level
+        not_intent: 
+        - dog_coat_type
+        - dog_size
+        - dog_shedding
+    # characteristics:
+      # - type: from_entity
+        # entity: characteristics
     coat_type:
       - type: from_entity
         entity: coat_type
+        intent: dog_coat_type
+        not_intent: 
+        - dog_barking_level
+        - dog_size
     shedding:
       - type: from_entity
         entity: shedding
+        intent: dog_shedding
+        not_intent: dog_barking_level
     size:
       - type: from_entity
         entity: size
+        intent: dog_size
+        not_intent: 
+        - dog_coat_type
+        - dog_barking_level
     trainability:
       - type: from_entity
         entity: trainability

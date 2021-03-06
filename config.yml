@@ -22,9 +22,12 @@ pipeline:
      retrieval_intent: chitchat
    - name: ResponseSelector
      epochs: 100
+     retrieval_intent: addinfo
+   - name: ResponseSelector
+     epochs: 100
      retrieval_intent: faq
    - name: FallbackClassifier
-     threshold: 0.2
+     threshold: 0.3
      ambiguity_threshold: 0.1
 
 # Configuration for Rasa Core.
@@ -37,4 +40,5 @@ policies:
    - name: TEDPolicy
      max_history: 5
      epochs: 100
+   - name: MappingPolicy
    - name: RulePolicy
