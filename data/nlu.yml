@@ -9,25 +9,18 @@ nlu:
     - hello there
     - good morning
     - good evening
-    - moin
     - hey there
-    - let's go
     - hey dude
-    - goodmorning
-    - goodevening
     - good afternoon
+    - How are you?
 
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
+    - see you later
     - good night
     - bye
     - goodbye
     - have a nice day
-    - see you around
     - bye bye
     - see you later
 
@@ -40,7 +33,6 @@ nlu:
     - that sounds good
     - correct
     - yup
-    - that did 
 
 - intent: deny
   examples: |
@@ -75,7 +67,6 @@ nlu:
     - I am going to save the world
     - super stoked
     - extremely good
-    - so so perfect
     - so good
     - so perfect
 
@@ -93,7 +84,6 @@ nlu:
     - not good
     - not very good
     - extremly sad
-    - so saad
     - so sad
 
 - intent: bot_challenge
@@ -109,6 +99,8 @@ nlu:
     - open the url
     - open the link in browser
     - show me the video that i asked for
+    - do you have a dog video?
+    - any dog video to watch here?
 
 - intent: display_image
   examples: |
@@ -129,9 +121,9 @@ nlu:
     
 - intent: start_dog_conversation
   examples: |
-    - Please help me to find a pet
+    - i'd like to learn about dogs
     - I want to learn about dog breeds
-    - Can you teach me about dog?
+    - Can you teach me about dogs?
     - please help me to understand dog breeds
     - Would you please help me to find a dog that suits my life?
     - I want to find a dog to live with me
@@ -178,7 +170,6 @@ nlu:
     - Let's go with [energetic](activity_level) activity level
     - Let's go with [calm](activity_level) activity level
     - Let's go with [consistent](activity_level) activity level
-    
 
 - intent: dog_barking_level
   examples: |
@@ -316,7 +307,7 @@ nlu:
     - Would you provide more information on coat type?
     - any suggestion on coat type?
     - Please give me some suggestion on coat type
-        
+   
 - intent: addinfo/dog_shedding
   examples: |
     - What are difference in dog shedding?
@@ -456,12 +447,10 @@ nlu:
 - synonym: eager-to-please
   examples: |
     - eager to please
-     
+
 - synonym: cat
   examples: |
     - cats
     - cat
     - kitty
-    - kitties
-
-    
+    - kitties   

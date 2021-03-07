@@ -16,6 +16,7 @@ intents:
   - faq
   - addinfo
   - start_dog_conversation
+  - restart_chat
   - dog_group:
       use_entities:
       - group
@@ -25,30 +26,30 @@ intents:
   - dog_barking_level:
       use_entities:
       - barking_level
-      ignore_entities:
-      - dog_coat_type
-      - dog_size
-      - dog_shedding
+      # ignore_entities:
+      # - dog_coat_type
+      # - dog_size
+      # - dog_shedding
   # - dog_characteristics:
       # use_entities:
       # - characteristics
   - dog_coat_type:
       use_entities:
       - coat_type
-      ignore_entities:
-      - dog_barking_level
-      - dog_size
+      # ignore_entities:
+      # - dog_barking_level
+      # - dog_size
   - dog_shedding:
       use_entities:
       - shedding
-      ignore_entities:
-      - dog_barking_level
+      # ignore_entities:
+      # - dog_barking_level
   - dog_size:
       use_entities:
       - size
-      ignore_entities:
-      - dog_coat_type
-      - dog_barking_level
+      # ignore_entities:
+      # - dog_coat_type
+      # - dog_barking_level
   - dog_trainability:
       use_entities:
       - trainability        
@@ -203,7 +204,7 @@ forms:
       - type: from_entity
         entity: group
         intent: dog_group
-        not_intent: faq
+        # not_intent: faq
     activity_level:
       - type: from_entity
         entity: activity_level
@@ -211,10 +212,10 @@ forms:
       - type: from_entity
         entity: barking_level
         intent: dog_barking_level
-        not_intent: 
-        - dog_coat_type
-        - dog_size
-        - dog_shedding
+        # not_intent: 
+        # - dog_coat_type
+        # - dog_size
+        # - dog_shedding
     # characteristics:
       # - type: from_entity
         # entity: characteristics
@@ -222,21 +223,21 @@ forms:
       - type: from_entity
         entity: coat_type
         intent: dog_coat_type
-        not_intent: 
-        - dog_barking_level
-        - dog_size
+        # not_intent: 
+        # - dog_barking_level
+        # - dog_size
     shedding:
       - type: from_entity
         entity: shedding
         intent: dog_shedding
-        not_intent: dog_barking_level
+        # not_intent: dog_barking_level
     size:
       - type: from_entity
         entity: size
         intent: dog_size
-        not_intent: 
-        - dog_coat_type
-        - dog_barking_level
+        # not_intent: 
+        # - dog_coat_type
+        # - dog_barking_level
     trainability:
       - type: from_entity
         entity: trainability

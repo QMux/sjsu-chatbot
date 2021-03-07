@@ -47,3 +47,11 @@ note: we can simply input those values after we modified the entities values.
 - I like stubborn dogs
 
 - let's restart (restart chatbot)
+
+
+#### Training
+
+# check conflict in stories; checking the NLU, domain, and story data files
+rasa data validate stories --max-history 5    
+
+
