@@ -87,8 +87,6 @@ responses:
       "Hey there! This is dog breed related chatroom"
   - text: |
       "Hello! How can I help you? (we know dogs ^_^)"
-  - text: |
-      "Hi! How are you doing today?"
         
   utter_goodbye:
   - text: "Goodbye ^_^"
@@ -103,7 +101,7 @@ responses:
   - text: "Things will become better! Please don't give up, we have your back!"
 
   utter_did_that_help:
-  - text: "Did that help you?"
+  - text: "Did that help you? Hope you are feeling better."
 
   utter_happy:
   - text: "Great, carry on!"
@@ -123,13 +121,13 @@ responses:
   - text: "You're very welcome."
     
   utter_ask_group:
-  - text: "What group of dogs do you like? (please choose one below)\n\n    -sporting\n\n    -hound\n\n    -working\n\n    -terrier\n\n    -toy\n\n    -non-sporting\n\n    -herding\n\n    -miscellaneous\n\n    -foundation stock service"
+  - text: "What group of dogs do you like? (please choose one below)\n\n    -sporting\n\n    -hound\n\n    -working\n\n    -terrier\n\n    -toy\n\n    -non-sporting\n\n    -herding\n\n    -miscellaneous class\n\n    -foundation stock service"
     
   utter_ask_activity_level:
-  - text: "What is your preferred dog's activity level? (please choose one below)\n\n    -needs lots of activity\n\n    -consistent\n\n    -energetic\n\n    -calm"
+  - text: "What is your preferred dog's activity level? (please choose one below)\n\n    -consistent\n\n    -energetic\n\n    -calm"
     
   utter_ask_barking_level:
-  - text: "What is your ideal dog's barking level? (please choose one below)\n\n    -when necessary\n\n    -less\n\n    -average\n\n    -often\n\n    -likes to be vocal"
+  - text: "What is your ideal dog's barking level? (please choose one below)\n\n    -when necessary\n\n    -less\n\n    -average\n\n    -often\n\n    -vocal"
     
   # utter_ask_characteristics:
   # - text: "What characteristics are you looking for in a dog? (please choose one below)\n\n    -smallest dog breeds\n\n    -medium dog breeds\n\n    -largest dog breeds\n\n    -smartest breeds of dogs\n\n    -hypoallergenic dogs\n\n    -best family dogs\n\n    -best guard dogs\n\n    -best dog breeds for kids\n\n    -best dogs for apartments\n\n    -hairless dog breeds"
@@ -144,7 +142,7 @@ responses:
   - text: "What size of dog if preferred? (please choose one below)\n\n    -xsmall\n\n    -small\n\n    -medium\n\n    -large\n\n    -xlarge"
     
   utter_ask_trainability:
-  - text: "How about trainability? (please choose one below)\n\n    -may be stubborn\n\n    -agreeable\n\n    -easy to please\n\n    -independent\n\n    -easy training"
+  - text: "How about trainability? (please choose one below)\n\n    -may be stubborn\n\n    -agreeable\n\n    -eager to please\n\n    -independent\n\n    -easy training"
     
   utter_details_thanks:
   - text: "Thanks for providing feedbacks below: \n    -Group: {Group},\n    -Activity_level: {Activity_level},\n    -Barking_level: {Barking_level},\n     -Coat_type: {Coat_type},\n    -Shedding: {Shedding},\n    -Size: {Size},\n    -Trainability: {Trainability}"
@@ -178,13 +176,13 @@ responses:
   - text: "Good question Here is an idea, please choose a vocal dog if you like to sing =)\n\n...\n\n"
        
   utter_addinfo/dog_coat_type:
-  - text: "Sure, here are additional infomation on coat type:\n\n    -hairless dogs require special skincare routines due to more exposure.\n\n    -short coat dogs have more rigid hairs\n\n    -medium coat dogs have softer hairs than short coat ones\n\n    -wire coat is not soft and silky, but rather rough and bristly\n\n    -smooth coat is like short coat, but shinier\n\n    -long coat is very soft and furry, but requires lots of grooming\n\n...\n\n"
+  - text: "Sure, here are additional infomation on coat type:\n\n    -hairless dogs require special skincare routines due to more exposure.\n\n    -short coat dogs have more rigid hairs\n\n    -fair coat dogs have softer hairs than short coat ones\n\n    -wire coat is not soft and silky, but rather rough and bristly\n\n    -smooth coat is like short coat, but shinier\n\n    -long coat is very soft and furry, but requires lots of grooming\n\n...\n\n"
   
   utter_addinfo/dog_shedding:
   - text: "Dog grooming can be very time consuming and messy, if you don't have lots of free time, please consider dogs with low to medium shedding\n\n...\n\n"
     
   utter_addinfo/dog_size:
-  - text: "Of course. Here are some details below:\n\n    -xsmall is under 10 lbs\n\n    -small is between 10-25 lbs\n\n    -medium is between 20-50 lbs\n\n    -large is between 50-75 lbs\n\n    -xlarge is over 75 lbs\n\n...\n\n"
+  - text: "Of course. Here are some details below:\n\n    -xsmall is under 10 lbs\n\n    -small is between 10-25 lbs\n\n    -medium is between 20-50 lbs\n\n    -large is between 50-75 lbs\n\n    -xlarge is over 75 lbs\n\n Note: big dogs come with bog love ^_^\n\n...\n\n"
 
   utter_addinfo/dog_trainability:
   - text: "Okay. If you haven't had a dog before, an eager to please or easy training dog will be good to start with\n\n...\n\n"

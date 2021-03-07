@@ -163,43 +163,40 @@ nlu:
 
 - intent: dog_activity_level
   examples: |
-    - I like dogs with [needs-lots-of-activity](activity_level)
+    - I like dogs with [energetic](activity_level)
     - I prefer [consistent](activity_level) dogs
     - I want [consistent](ctivity_level) dogs
     - I love [energetic](ctivity_level) dogs
-    - Let's look for [needs-lots-of-activity](activity_level) dogs
+    - Let's look for [calm]](activity_level) dogs
     - we are interested in [calm](activity_level)
     - They like [calm](activity_level) pets
     - She loves [energetic](activity_level) puppy
     - She loves [calm](activity_level) dogs
-    - we are interested in [needs lots of activity ](activity_level)
-    - They like [needs much activity](activity_level) pets
-    - She loves [need a lot activity](activity_level) puppy
+    - They like [calm]](activity_level) pets
+    - She loves [consistent](activity_level) puppy
     - Let's go with [consistent](ctivity_level) activity level
-    - Let's go with [need a lot activity](activity_level) activity level
     - Let's go with [energetic](activity_level) activity level
     - Let's go with [calm](activity_level) activity level
-    - Let's go with [need a lot activity](activity_level) activity level
+    - Let's go with [consistent](activity_level) activity level
     
 
 - intent: dog_barking_level
   examples: |
     - I like dogs bark [when-necessary](barking_level)
-    - I prefer [medium](barking_level) quiet dogs
+    - I prefer [average](barking_level) quiet dogs
     - I like dogs bark [when necessary](barking_level)
-    - I prefer [as necessary](barking_level) quiet dogs
-    - I think [medium](barking_level) is good
-    - I love dogs that [infrequent](barking_level) bark
-    - Let's look for a dog that [likes-to-be-vocal](barking_level)
-    - Let's look for a dog that [frequent](barking_level)
-    - we like [frequent](barking_level) barking dogs.
+    - I prefer [necessary](barking_level) quiet dogs
+    - I think [average](barking_level) is good
+    - I love dogs that [less](barking_level) bark
+    - Let's look for a dog that [vocal](barking_level)
+    - Let's look for a dog that [often](barking_level)
+    - we like [often](barking_level) barking dogs.
     - I love dogs that [vocal](barking_level) bark
-    - Let's look for a dog that [likes to be vocal](barking_level)
-    - Let's look for a dog that [maybe vocal](barking_level)
-    - Let's go with [likes to be vocal](barking_level) barking level
+    - Let's look for a dog that [less](barking_level)
+    - Let's go with [vocal](barking_level) barking level
     - Let's go with [when necessary](barking_level) barking level
-    - Let's go with [medium](barking_level) barking level
-    - Let's go with [infrequent](barking_level) barking level
+    - Let's go with [average](barking_level) barking level
+    - Let's go with [less](barking_level) barking level
 
 # - intent: dog_characteristics
   # examples: |
@@ -228,20 +225,21 @@ nlu:
     - Let's go with [short](coat_type) coat type
     - Let's go with [long](coat_type)coat type
     - Let's go with [smooth](coat_type)coat type
+    - Let's go with [wire](coat_type)coat type
 
 - intent: dog_shedding
   examples: |
-    - I like [less](shedding) shedding dogs
-    - I prefer [less](shedding) shedding dogs
+    - I like [infrequent](shedding) shedding dogs
+    - I prefer [infrequent](shedding) shedding dogs
     - I love [seasonal](shedding) shedding dogs
     - Let's look for [seasonal](shedding) shedding dogs
-    - we are interested in [often](shedding)
+    - we are interested in [frequent]](shedding)
     - They like [occasional](shedding) shedding pets
     - She loves [occasional](shedding) shedding puppy
-    - She loves [average](shedding) dogs
-    - Let's go with [less](shedding) shedding
-    - Let's go with [average](shedding) shedding
-    - Let's go with [often](shedding) shedding
+    - She loves [regularly](shedding) dogs
+    - Let's go with [infrequent](shedding) shedding
+    - Let's go with [regularly](shedding) shedding
+    - Let's go with [frequent](shedding) shedding
     - Let's go with [occasional](shedding) shedding
 
 - intent: dog_size
@@ -439,14 +437,6 @@ nlu:
   examples: |
     - miscellaneous class
     - miscellaneous
- 
-- synonym: likes-to-be-vocal
-  examples: |
-    - likes to be vocal
-    - maybe vocal
-    - to be vocal
-    - vocal
-    - be vocal
     
 - synonym: when-necessary
   examples: |
@@ -466,12 +456,6 @@ nlu:
 - synonym: eager-to-please
   examples: |
     - eager to please
-    
-- synonym: needs-lots-of-activity
-  examples: |
-    - needs lots of activity 
-    - needs much activity
-    - need a lot activity
      
 - synonym: cat
   examples: |

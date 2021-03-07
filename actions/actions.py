@@ -96,18 +96,6 @@ class ActionSubmit(Action):
                                  Size=tracker.get_slot("size"),
                                  Trainability=tracker.get_slot("trainability"),
                                  )
-    
-        df = pd.read_csv("web_scraping/dog_breed_characteristics.csv")
-        characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding"]
-        for char in characteristics:
-            df = df[df[char]==tracker.get_slot(char)]
-        
-        dispatcher.utter_message("...checking our 279 dog breeds database...")
-        
-        if df.shape[0] == 0:
-            dispacter.utter_message("No suggested dogs with those features! A cat may be better for you =)")
-        else:
-            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['Breed'])
 
 
 class ActionLookupDogs(Action):
