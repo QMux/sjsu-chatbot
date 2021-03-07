@@ -157,8 +157,8 @@ nlu:
   examples: |
     - I like dogs with [energetic](activity_level)
     - I prefer [consistent](activity_level) dogs
-    - I want [consistent](ctivity_level) dogs
-    - I love [energetic](ctivity_level) dogs
+    - I want [consistent](activity_level) dogs
+    - I love [energetic](activity_level) dogs
     - Let's look for [calm]](activity_level) dogs
     - we are interested in [calm](activity_level)
     - They like [calm](activity_level) pets
@@ -166,7 +166,7 @@ nlu:
     - She loves [calm](activity_level) dogs
     - They like [calm]](activity_level) pets
     - She loves [consistent](activity_level) puppy
-    - Let's go with [consistent](ctivity_level) activity level
+    - Let's go with [consistent](activity_level) activity level
     - Let's go with [energetic](activity_level) activity level
     - Let's go with [calm](activity_level) activity level
     - Let's go with [consistent](activity_level) activity level
@@ -334,7 +334,7 @@ nlu:
   
 - intent: faq/ask_task
   examples: |
-    - what do yo do?
+    - what do you do?
     - How can you help me?
     - What is your job?
     - What is your work?
@@ -352,9 +352,9 @@ nlu:
     - dog toy
     - pet toy
     - cat toy
-    - Where can I find dog toy?
-    - Do you have anything related to pet toy?
-    - I need some advices on toys
+    - Where can I find a dog toy?
+    - Do you have anything related to pet toys?
+    - I need some advice on toys
     
 - intent: chitchat/ask_weather
   examples: |
@@ -364,17 +364,17 @@ nlu:
     - What is the weather this week?
     - Is it sunny outside?
     - Is it cloudy or sunny?
-    - what is the weather tomorrow
+    - What is the weather tomorrow?
     
 - intent: chitchat/ask_cat
   examples: |
-    - I like cat
-    - can you help me with cat?
+    - I like cats
+    - Can you help me with cats?
     - I want a cat.
-    - We love cat.
-    - Let's try with cat.
-    - can you tell me about cat?
-    - what about cat?
+    - We love cats.
+    - Let's try with cats.
+    - Can you tell me about cats?
+    - What about cat?
     
 # - intent: stop
     # - stop
@@ -389,9 +389,9 @@ nlu:
 - intent: restart_chat
   examples: |
     - restart
-    - let's start from beginning
-    - let's try it again
-    - let's do it again
+    - Let's start from beginning
+    - Let's try it again
+    - Let's do it again
     - I want to restart 
     - Let me start from beginning
     - start again from beginning

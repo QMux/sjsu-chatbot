@@ -8,6 +8,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.events import SlotSet, EventType, Restarted
 from rasa_sdk.executor import CollectingDispatcher
+import pandas as pd
 import webbrowser
 
 
@@ -112,7 +113,7 @@ class ActionLookupDogs(Action):
         characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding"]
         for char in characteristics:
             df = df[df[char]==tracker.get_slot(char)]
-        if df.shape[0] == 0:
-            dispacter.utter_message("No suggested dogs with those features! A cat may be better for you =)")
+        if df.empty:
+            dispacther.utter_message("No suggested dogs with those features! A cat may be better for you =)")
         else:
-            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['Breed'])
+            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['breed'])
