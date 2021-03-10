@@ -114,6 +114,6 @@ class ActionLookupDogs(Action):
         for char in characteristics:
             df = df[df[char]==tracker.get_slot(char)]
         if df.empty:
-            dispacther.utter_message("No suggested dogs with those features! A cat may be better for you =)")
+            dispatcher.utter_message("No suggested dogs with those features! A cat may be better for you =)")
         else:
             dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['breed'])
