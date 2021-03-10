@@ -109,11 +109,32 @@ class ActionLookupDogs(Action):
             tracker: Tracker,
             domain: "DomainDict",
     ) -> List[Dict[Text, Any]]:
-        df = pd.read_csv("web_scraping/dog_breed_characteristics.csv")
-        characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding"]
+        df = pd.read_csv("web_scraping/dog_breed_characteristics.csv", index_col=False)
+        characteristics = ["size", "group", "activity_level", "barking_level", "coat_type", "shedding", "trainability"]
+
+        def count_true(series):
+            count = 0
+            for col in series:
+                if col == True:
+                    count += 1
+            return count
+
+
         for char in characteristics:
-            df = df[df[char]==tracker.get_slot(char)]
-        if df.empty:
-            dispatcher.utter_message("No suggested dogs with those features! A cat may be better for you =)")
+            df[char] = (df[char]==tracker.get_slot(char))
+
+        df["matches"] = df.apply(
+            func=lambda row: count_true(row), axis=1)
+
+        df = df.sort_values(by='matches', ascending=False)
+        maxVal = df.iloc[0]['matches']
+
+        if maxVal >= 5:
+            dispatcher.utter_message("Most Matches: " + str(maxVal) + "/7 Characteristics")
+            dispatcher.utter_message("Best Matches: ")
+            best_matches = df[df['matches'] == maxVal]
+            for index, row in best_matches.iterrows():
+                dispatcher.utter_message(row['breed'])
         else:
-            dispatcher.utter_message("Suggested Dog: " + df.iloc[0]['breed'])
+            dispatcher.utter_message("No suggested dogs with those features! A cat may be better for you =)")
+           
