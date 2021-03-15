@@ -4,6 +4,7 @@ installation guide above
 instalation
 •	python3 -m venv ./venv
 •	source ./venv/bin/activate
+•       pip3 install pandas
 •	pip3 install rasa
 •	rasa init 	# to start it\
 
@@ -12,12 +13,14 @@ Training
 •	rasa train
 
 
-run
+Run
+start with a command below first:
 •	rasa run actions &
+and then use one of those commands below:
 •	rasa shell
 •	rasa shell --debug
 
-other good commands
+Other good commands
 •	/stop       	# to stop it
 •	/restart       	# to stop it
 

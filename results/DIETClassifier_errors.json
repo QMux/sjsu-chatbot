@@ -1,0 +1,38 @@
+[
+  {
+    "text": "Let's go with longcoat type",
+    "entities": [
+      {
+        "start": 14,
+        "end": 18,
+        "value": "long",
+        "entity": "coat_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Let's go with smoothcoat type",
+    "entities": [
+      {
+        "start": 14,
+        "end": 20,
+        "value": "smooth",
+        "entity": "coat_type"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "Let's go with wirecoat type",
+    "entities": [
+      {
+        "start": 14,
+        "end": 18,
+        "value": "wire",
+        "entity": "coat_type"
+      }
+    ],
+    "predicted_entities": []
+  }
+]
